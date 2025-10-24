@@ -3,6 +3,7 @@ title: 从零开始搭建 Hexo + NexT + GitHub Pages 博客
 date: 2025-10-20 12:00:00
 categories:
   - 技术笔记
+  - 博客搭建
 tags:
   - Hexo
   - NexT
