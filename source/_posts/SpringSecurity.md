@@ -42,7 +42,31 @@ Security会自己处理：登录验证、过滤器链、会话安全、跨域、
 </dependency>
 ```
 
-2. 配置类
+## 2. 配置类
+
+### 补充：之前没注意Spring2和Spring3的区别
+Spring Boot 2.x 配置方式
+```
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .authorizeRequests()
+                .antMatchers("/public/**").permitAll()
+                .anyRequest().authenticated()
+            .and()
+            .formLogin();
+    }
+}
+```
+
+作者：刘大华
+链接：https://juejin.cn/post/7570191839593332799
+
+来源：稀土掘金
 
 SpringBoot 3 去掉了 WebSecurityConfigurerAdapter，用 Bean 配置。
 ```
