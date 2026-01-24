@@ -59,3 +59,6 @@
 {%- endif %}
 
 {{- next_inject('footer') }}
+
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3OnjqyPOaoYCHllV",ck:"3OnjqyPOaoYCHllV"})</script>
