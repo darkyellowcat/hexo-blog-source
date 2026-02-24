@@ -5,7 +5,6 @@ categories:
   - 踩坑
 tags:
   - MySQL
-  - 踩坑
   - 数据库
 ---
 
@@ -44,7 +43,7 @@ ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: Y
 我本地可能同时存在两个 MySQL 服务
 
 ## 解决办法
-### ✅ 1. 确认当前连接的是哪个 MySQL 实例
+### 1. 确认当前连接的是哪个 MySQL 实例
 
 登录后执行：
 ```bash
@@ -53,7 +52,7 @@ SHOW VARIABLES LIKE 'datadir';
 
 查看数据目录。对比你之前配置的 my.ini 中的 datadir 路径是否一致。
 
-### ✅ 2. 检查 MySQL 服务状态
+### 2. 检查 MySQL 服务状态
 
 在 Windows 上：
 ```bash
@@ -69,7 +68,7 @@ net start
 ps aux | grep mysqld
 ```
 
-### ✅ 3. 确保只启动一个 MySQL 服务
+### 3. 确保只启动一个 MySQL 服务
 
 停止所有 MySQL 进程(把不是你需要的服务删除了)，然后手动启动你配置过的那个实例：
 
@@ -79,17 +78,17 @@ net stop MySQL80
 mysqld --defaults-file="C:\path\to\my.ini"
 ```
 
-### ✅ 4. 使用明确的连接方式
+### 4. 使用明确的连接方式
 
 如果你有多个实例，建议通过指定端口或 socket 连接：
 ```bash
 mysql -u root -p -P 3306 --protocol=tcp
 ```
 
-### ✅ 5. 避免“直接关窗口”
+### 5. 避免“直接关窗口”
 
 虽然直接关闭命令行通常不会导致数据丢失，
-但养成输入 exit 退出的习惯，有助于你更清楚当前会话状态。
+但介于我糟心的体验，还是建议养成输入 *exit* 退出的习惯。
 
 # bb
-如果所有方法试过之后都不好用，重装可以解决你的一切烦恼(认真)
+如果所有方法试过之后都不好用，重装可以解决你的一切烦恼(记得备份数据)。
