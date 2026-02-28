@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/Java基础算法模板.md",
+                "file": "source/_posts/位运算常用技巧.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Java基础算法模板"
+              "title": "位运算常用技巧"
             }
           }
         ]
@@ -184,5 +184,8 @@
     }
   },
   "active": "ba3bd62eec3c7ea0",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "source/_posts/Java基础算法模板.md",
+    "source/_posts/位运算常用技巧.md"
+  ]
 }

@@ -177,14 +177,4 @@ org.mybatis:mybatis-spring:3.0.3
 * 只在 **Spring Boot 3 + MyBatis** 组合下触发
 *  **依赖版本与 Spring 6 不兼容**
 
-经验教训：
-
-> **升级到 Spring Boot 3 后，所有底层框架都必须确认是否已支持 Spring Framework 6**
-
-尤其是：
-
-* MyBatis / MyBatis-Plus
-* Swagger / Knife4j
-* Spring Security 相关组件
-
-否则非常容易踩到这种“启动即退出”的隐蔽问题。
+(注)虽然感觉可能性不大，但旧的依赖可能是MyBatis-Plus自己引入的。但因为无法百分百确定自己当初有没有引入，所以不能实锤。
