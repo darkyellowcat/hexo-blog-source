@@ -1,0 +1,6 @@
+{
+  "cline.apiProvider": "openai",
+  "cline.openaiBaseUrl": "https://code.mrzengchn.com/v1",
+  "cline.openaiApiKey": "sk-c3oYWc7CkqewcDcyqGYnvtKpD9gkPoAM45XCPWVolUpmXCSy",
+  "cline.model": "gpt-5.2"
+}
