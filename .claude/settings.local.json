@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:darkyellowcat.github.io)",
+      "Bash(npx hexo *)"
+    ]
+  }
+}
