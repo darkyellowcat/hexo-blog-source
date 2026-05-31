@@ -15,7 +15,7 @@ tags:
 
 ---
 
-## 1. 智能体工作流简介
+## 智能体工作流简介
 
 ### Non-Agentic vs Agentic Workflow
 
@@ -98,7 +98,7 @@ LLM 执行多步操作来完成任务，具备迭代和自我修正能力。
 
 ---
 
-## 2. Reflection 反思
+## Reflection 反思
 
 ### 与直接输出相比的优势
 
@@ -120,7 +120,7 @@ LLM 执行多步操作来完成任务，具备迭代和自我修正能力。
 
 ---
 
-## 3. Tool Use 工具使用
+## Tool Use 工具使用
 
 ![Tool Use 示意](image-6.png)
 
@@ -224,7 +224,7 @@ LLM 应用（MCP Client）  ←→  MCP Server（工具/数据源）
 
 ---
 
-## 4. 使用技巧
+## 使用技巧
 
 ### 构建 MVP（Minimum Viable Product，最小可行产品）
 
@@ -259,7 +259,7 @@ LLM 应用（MCP Client）  ←→  MCP Server（工具/数据源）
 
 ---
 
-## 5. 多智能体
+## 多智能体
 
 ### 为什么要用多智能体
 
@@ -311,7 +311,7 @@ Orchestrator → 同时通知所有 Agent → 收集结果 → 合并
 
 ---
 
-## 6. 知识图谱
+## 知识图谱
 
 ### 概念
 
