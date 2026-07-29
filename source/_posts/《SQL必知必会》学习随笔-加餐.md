@@ -1,5 +1,5 @@
 ---
-title: 《SQL必知必会》学习随笔（二）：Text to SQL 与行业实战
+title: 《SQL必知必会》学习随笔：Text to SQL 与行业实战
 date: 2026-07-18 16:44:37
 categories:
   - 学习笔记

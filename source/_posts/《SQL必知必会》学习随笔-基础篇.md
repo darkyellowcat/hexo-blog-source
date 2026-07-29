@@ -1,5 +1,5 @@
 ---
-title: 《SQL必知必会》学习随笔（一）：SQL 基础与 MySQL 执行流程
+title: 《SQL必知必会》学习随笔-基础篇：SQL 基础与 MySQL 执行流程
 date: 2026-07-17 12:00:28
 categories:
   - 学习笔记
