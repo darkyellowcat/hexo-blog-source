@@ -77,3 +77,45 @@
 - `source/_posts/《深入理解-AI-Agent》笔记-2-上下文工程.md`：将图片引用改为实际存在的 `skill.png`。
 - `progress.md`：追加图片检查、修复与验证记录。
 - 回滚方式：在仓库根目录执行 `git restore -- 'source/_posts/《深入理解-AI-Agent》笔记-2-上下文工程.md'`；如需连同日志回滚，再对 `progress.md` 执行同样命令（会移除本轮未提交修改）。
+
+## 2026-09-09 - Task: 修复 AI Agent 博客非预期换行
+### What was done
+
+- 将 Hexo Marked 渲染配置的 `breaks` 改为 `false`，使 Markdown 普通软换行不再生成页面强制换行。
+- 修正第一篇原有的 `## ## Agent = Model + Harness` 标题格式。
+- 新增 Markdown 换行约定文档，说明需要强制换行时的写法。
+
+### Testing
+
+- `npx hexo clean` + `npm run build`：通过；完整站点成功生成 192 个文件。
+- 浏览器页面检查：两篇目标页面正文段落中的强制 `<br>` 数量均为 0；第一篇标题显示为 `Agent = Model + Harness`。
+- `git diff --check`：通过，未发现空白错误。
+
+### Notes
+
+- `_config.yml`：关闭 Marked 的普通换行强制渲染。
+- `source/_posts/《深入理解-AI-Agent》笔记-1-AI-Agent-入门.md`：修正 Harness 标题格式。
+- `docs/markdown-rendering.md`：记录 Markdown 软换行和强制换行约定。
+- `progress.md`：追加本轮施工与验证记录。
+- 回滚方式：在仓库根目录执行 `git restore -- '_config.yml' 'source/_posts/《深入理解-AI-Agent》笔记-1-AI-Agent-入门.md' 'docs/markdown-rendering.md'`；如需连同日志回滚，再对 `progress.md` 执行同样命令（会移除本轮未提交修改）。
+
+## 2026-09-09 - Task: 修复博客非预期换行
+### What was done
+
+- 关闭 Hexo Marked 的普通软换行强制渲染，避免源码自动折行在页面中变成句中断行。
+- 修正第一篇博客原有的重复 Markdown 标题标记。
+- 增加 Markdown 换行约定说明。
+
+### Testing
+
+- `npx hexo clean` + `npm run build`：通过；完整站点成功生成 192 个文件。
+- 浏览器检查：两篇目标页面正文段落均未生成非预期 `<br>`，标题显示正常。
+- `git diff --check`：通过，未发现空白错误。
+
+### Notes
+
+- `_config.yml`：设置 `marked.breaks: false`。
+- `source/_posts/《深入理解-AI-Agent》笔记-1-AI-Agent-入门.md`：修正 `Agent = Model + Harness` 标题。
+- `docs/markdown-rendering.md`：记录软换行与强制换行约定。
+- `progress.md`：追加本轮施工与验证记录。
+- 回滚方式：在仓库根目录执行 `git restore -- '_config.yml' 'source/_posts/《深入理解-AI-Agent》笔记-1-AI-Agent-入门.md' 'docs/markdown-rendering.md'`；如需连同日志回滚，再对 `progress.md` 执行同样命令（会移除本轮未提交修改）。

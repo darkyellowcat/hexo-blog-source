@@ -77,7 +77,7 @@ Agent = LLM + 上下文 + 工具
 - 工具是 Agent 的手脚：这里的“工具”指 Agent 用来感知或改变外部世界的接口，包括工具定义、调用协议和
 适配器——从预定义的工具调用到动态生成代码，从委托子 Agent 协作到主动与用户沟通。
 
-## ## Agent = Model + Harness
+## Agent = Model + Harness
 
 ![alt text](环境交互.png)
 
