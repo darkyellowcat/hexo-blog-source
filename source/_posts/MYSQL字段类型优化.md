@@ -97,10 +97,8 @@ InnoDB 通常使用位图记录哪些可空列是 NULL。若索引记录中包�
 [
 \operatorname{CEILING}(N / 8)
 ]
-
 字节。
 
-NULL 会影响
 
 ### 原因
 
