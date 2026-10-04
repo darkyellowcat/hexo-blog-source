@@ -106,11 +106,6 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-archy@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmmirror.com/archy/-/archy-1.0.0.tgz"
-  integrity sha512-Xg+9RwCg/0p32teKdGMPTPnVXKD0w3DfHnFTficozsAgsvq2XenPJq/MYpzzQ/v8zrOyJn6Ds39VA4JIDwFfqw==
-
 argparse@^1.0.10, argparse@^1.0.7:
   version "1.0.10"
   resolved "https://registry.npmmirror.com/argparse/-/argparse-1.0.10.tgz"
@@ -539,7 +534,7 @@ domutils@^2.8.0:
     domelementtype "^2.2.0"
     domhandler "^4.2.0"
 
-domutils@^3.1.0:
+domutils@^3.1.0, domutils@^3.2.2:
   version "3.2.2"
   resolved "https://registry.npmmirror.com/domutils/-/domutils-3.2.2.tgz"
   integrity sha512-6kZKyUajlDuqlHKVX1w7gyslj9MPIXzIFiz/rGu35uC1wMi+kMhQwGhl4lt9unC9Vb9INnY9Z3/ZA3+FhASLaw==
@@ -616,6 +611,11 @@ entities@^6.0.0:
   resolved "https://registry.npmmirror.com/entities/-/entities-6.0.1.tgz"
   integrity sha512-aN97NXWF6AWBTahfVOIrB/NShkzi5H7F9r1s9mD3cDj4Ko5f2qhhVoYMibXF7GlLveb/D2ioWay8lxI97Ven3g==
 
+entities@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/entities/-/entities-7.0.1.tgz#26e8a88889db63417dcb9a1e79a3f1bc92b5976b"
+  integrity sha512-TWrgLOFUQTH994YUyl1yT4uyavY5nNB5muff+RtWaqNVCAK408b5ZnnbNAUEWLTCpum9w6arT70i1XdQ4UeOPA==
+
 es-define-property@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmmirror.com/es-define-property/-/es-define-property-1.0.1.tgz"
@@ -684,6 +684,11 @@ extend-shallow@^2.0.1:
   integrity sha512-zCnTtlxNoAiDc3gqY2aYAWFx7XWWiasuF2K8Me5WbN8otHKTUKBwjPtNpRs/rbUZm7KxWAaNj7P1a/p52GbVug==
   dependencies:
     is-extendable "^0.1.0"
+
+fast-archy@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fast-archy/-/fast-archy-1.0.0.tgz#26c8850718de3cecb15200e9257c09f1ad2fa0d0"
+  integrity sha512-j8CNf0sCX92BogtUZAMPhMj7p3nv7xxeETwfpVWQNQocC5b21FAa6bUzfuhcNoEa4f2RtDe5U3uY0NriH9nA7g==
 
 fast-equals@^3.0.1:
   version "3.0.3"
@@ -1028,7 +1033,7 @@ hexo-theme-landscape@^1.0.0:
 
 hexo-theme-next@^8.28.0:
   version "8.28.0"
-  resolved "https://registry.yarnpkg.com/hexo-theme-next/-/hexo-theme-next-8.28.0.tgz#318441b095233311dfa0e3767cf6d167c7a027b9"
+  resolved "https://registry.npmjs.org/hexo-theme-next/-/hexo-theme-next-8.28.0.tgz"
   integrity sha512-KqXcP2NI0hxhTf2SntYKjf1VgurjnYi8IDMErOvAfbiMlO+0jRk+40cwt55lgqeJpRK61jxY3WYsgTuK0vR7KA==
 
 hexo-toc@^1.1.0:
@@ -1069,21 +1074,34 @@ hexo-util@^3.0.1, hexo-util@^3.1.0, hexo-util@^3.3.0:
     prismjs "^1.29.0"
     strip-indent "^3.0.0"
 
-hexo@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.npmmirror.com/hexo/-/hexo-8.0.0.tgz"
-  integrity sha512-GFNUICrDWvrBrhq4Oe2BUKg4UFJpaU0PjoAm5WIwf6O0gV52vPCGkGWQxH6AhOfJ1BEHm3hJALRl7RqOcgQP+A==
+hexo-util@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/hexo-util/-/hexo-util-4.0.0.tgz#23f69597aa200ee5612a4fd986cf7d7b5bcc6ea2"
+  integrity sha512-oXKXBs1HZ2Wu/eq0paAVqtCmAEcqJPZ4xxSVRuwAplm1hFU41Ul53WA5bmYMEz9Dp+OJ/SdchjXRmYlbGJdt3w==
+  dependencies:
+    camel-case "^4.1.2"
+    cross-spawn "^7.0.3"
+    deepmerge "^4.2.2"
+    highlight.js "^11.6.0"
+    htmlparser2 "^10.0.0"
+    prismjs "^1.29.0"
+    strip-indent "^3.0.0"
+
+hexo@^8.1.2:
+  version "8.1.2"
+  resolved "https://registry.yarnpkg.com/hexo/-/hexo-8.1.2.tgz#29d9d5d3281d85d59dfe05af93299f95a0e9f6a7"
+  integrity sha512-gmpNwL1KnbK12q551ZhGxqvSw8M88ZSjFKOhx6ybUYz1phjPdwGewMgBgwGmjcVcIYFq6tWQAv1MRil/sBrPHQ==
   dependencies:
     abbrev "^3.0.0"
-    archy "^1.0.0"
     bluebird "^3.7.2"
+    fast-archy "^1.0.0"
     fast-text-table "^1.0.1"
     hexo-cli "^4.3.2"
     hexo-front-matter "^4.2.1"
     hexo-fs "^5.0.0"
     hexo-i18n "^2.0.0"
     hexo-log "^4.1.0"
-    hexo-util "^3.3.0"
+    hexo-util "^4.0.0"
     js-yaml "^4.1.0"
     js-yaml-js-types "^1.0.1"
     micromatch "^4.0.8"
@@ -1109,6 +1127,16 @@ html-encoding-sniffer@^4.0.0:
   integrity sha512-Y22oTqIU4uuPgEemfz7NDJz6OeKf12Lsu+QC+s3BVpda64lTiMYCyGwg5ki4vFxkMwQdeZDl2adZoqUgdFuTgQ==
   dependencies:
     whatwg-encoding "^3.1.1"
+
+htmlparser2@^10.0.0:
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/htmlparser2/-/htmlparser2-10.1.0.tgz#fe3f2e12c73b6e462d4e10395db9c1119e4d6ae4"
+  integrity sha512-VTZkM9GWRAtEpveh7MSF6SjjrpNVNNVJfFup7xTY3UpFtm67foy9HDVXneLtFVt4pMz5kZtgNcvCniNFb1hlEQ==
+  dependencies:
+    domelementtype "^2.3.0"
+    domhandler "^5.0.3"
+    domutils "^3.2.2"
+    entities "^7.0.1"
 
 htmlparser2@^7.0.0:
   version "7.2.0"
