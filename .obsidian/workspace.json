@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "位运算常用技巧"
             }
+          },
+          {
+            "id": "5a18b0bb328d7318",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.12.4"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -183,7 +196,7 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "ba3bd62eec3c7ea0",
+  "active": "5a18b0bb328d7318",
   "lastOpenFiles": [
     "source/_posts/Java基础算法模板.md",
     "source/_posts/位运算常用技巧.md"

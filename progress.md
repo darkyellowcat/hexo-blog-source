@@ -119,3 +119,98 @@
 - `docs/markdown-rendering.md`：记录软换行与强制换行约定。
 - `progress.md`：追加本轮施工与验证记录。
 - 回滚方式：在仓库根目录执行 `git restore -- '_config.yml' 'source/_posts/《深入理解-AI-Agent》笔记-1-AI-Agent-入门.md' 'docs/markdown-rendering.md'`；如需连同日志回滚，再对 `progress.md` 执行同样命令（会移除本轮未提交修改）。
+
+## 2026-09-29 - Task: 整理 HTTP 请求与响应旧笔记
+
+### What was done
+
+- 将旧笔记中的请求、响应与状态码内容重新组织为一篇博客，纠正 GET 请求体、HTTP/3 传输及请求行术语等表述。
+
+### Testing
+
+- npm run build：通过，生成目标文章页面。
+- 检查生成 HTML：标题、正文及 HTTP 代码块存在；源码围栏成对，未发现 Unicode 替换字符。
+- git diff --check：通过。
+- 仓库不存在 scripts\verify.ps1，无法执行固定验证脚本，本轮使用 Hexo 构建验证。
+
+### Notes
+
+- source/_posts/HTTP请求与响应怎么组成.md：新增核对后的 HTTP 请求与响应文章。
+- progress.md：追加本轮内容与验证记录。
+- 回滚方式：在博客仓库根目录执行 Remove-Item -LiteralPath '.\source\_posts\HTTP请求与响应怎么组成.md'；日志为追加记录，如需撤销，删除本轮新增的对应日志段落。
+
+## 2026-09-29 - Task: 整理 Java 文件与字节流旧笔记
+
+### What was done
+
+- 合并路径、输入流和输出流素材，形成文件复制主线，修正必须先创建 File 对象及所有输出流都自动缓冲等旧表述。
+
+### Testing
+
+- npm run build：通过，生成目标文章页面；标题和代码块渲染正常。
+- 提取文中完整 Java 示例，用 javac 编译并运行；中文 UTF-8 输入与复制结果的文件哈希一致。
+- 源码围栏成对，未发现 Unicode 替换字符；git diff --check 通过。
+- 仓库不存在 scripts\verify.ps1，使用现有 Hexo 构建命令验证。
+
+### Notes
+
+- source/_posts/Java文件与字节流入门.md：新增核对后的文件与字节流文章。
+- progress.md：追加本轮内容与验证记录。
+- 回滚方式：在博客仓库根目录执行 Remove-Item -LiteralPath '.\source\_posts\Java文件与字节流入门.md'；如需撤销日志，删除本轮新增的对应段落。
+
+## 2026-09-29 - Task: 整理 Java 二维数组复制旧笔记
+
+### What was done
+
+- 核对 CS61B 原练习出处，重新编写示例，解释外层数组复制、行引用共享与逐行复制的差别。
+
+### Testing
+
+- npm run build：通过，生成目标文章页面；标题和代码块渲染正常。
+- 提取文中 Java 示例，用 javac 编译并运行；输出为 20、20、99、false、true、false，与文章一致。
+- 源码围栏成对，未发现 Unicode 替换字符；git diff --check 通过。
+- 仓库不存在 scripts\verify.ps1，使用现有 Hexo 构建命令验证。
+
+### Notes
+
+- source/_posts/Java二维数组复制-共享行与复制元素.md：新增重新编写并注明练习来源的文章。
+- progress.md：追加本轮内容与验证记录。
+- 回滚方式：在博客仓库根目录执行 Remove-Item -LiteralPath '.\source\_posts\Java二维数组复制-共享行与复制元素.md'；如需撤销日志，删除本轮新增的对应段落。
+
+## 2026-09-29 - Task: 整理 Java 接口与抽象类旧笔记
+
+### What was done
+
+- 合并两份接口笔记，以调用契约和共享实现为主线，纠正接口只能有抽象方法的过时表述。
+
+### Testing
+
+- npm run build：通过，生成目标文章页面；标题和代码块渲染正常。
+- 提取文中 Java 示例，用 javac 编译并运行；输出 [notice] Hello，与文章一致。
+- 源码围栏成对，未发现 Unicode 替换字符；git diff --check 通过。
+- 仓库不存在 scripts\verify.ps1，使用现有 Hexo 构建命令验证。
+
+### Notes
+
+- source/_posts/Java接口与抽象类怎么选.md：新增接口和抽象类的整理文章。
+- progress.md：追加本轮内容与验证记录。
+- 回滚方式：在博客仓库根目录执行 Remove-Item -LiteralPath '.\source\_posts\Java接口与抽象类怎么选.md'；如需撤销日志，删除本轮新增的对应段落。
+
+## 2026-09-29 - Task: 整理 Java equals 与 hashCode 旧笔记
+
+### What was done
+
+- 以集合查找示例重写相等与散列码契约，纠正默认散列码等于内存地址及普通散列码具备密码学抗碰撞性的错误表述。
+
+### Testing
+
+- npm run build：通过，生成目标文章页面；标题和代码块渲染正常。
+- 提取文中 Java 示例，用 javac 编译并运行；输出 true、true，与文章一致。
+- 源码围栏成对，未发现 Unicode 替换字符；git diff --check 通过。
+- 仓库不存在 scripts\verify.ps1，使用现有 Hexo 构建命令验证。
+
+### Notes
+
+- source/_posts/Java-equals与hashCode为什么要一起重写.md：新增核对后的相等与散列码文章。
+- progress.md：追加本轮内容与验证记录。
+- 回滚方式：在博客仓库根目录执行 Remove-Item -LiteralPath '.\source\_posts\Java-equals与hashCode为什么要一起重写.md'；如需撤销日志，删除本轮新增的对应段落。
