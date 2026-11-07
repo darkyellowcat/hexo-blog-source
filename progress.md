@@ -214,3 +214,34 @@
 - source/_posts/Java-equals与hashCode为什么要一起重写.md：新增核对后的相等与散列码文章。
 - progress.md：追加本轮内容与验证记录。
 - 回滚方式：在博客仓库根目录执行 Remove-Item -LiteralPath '.\source\_posts\Java-equals与hashCode为什么要一起重写.md'；如需撤销日志，删除本轮新增的对应段落。
+
+## 2026-11-07 - Task: 补完 magpie 个人体验分享
+
+### What was done
+
+- 保留更换工具的经历，补全路由、用量、隐私脱敏、跨 Agent 使用模型与订阅、方案切换及简短上手说明，延续第一人称和短段落表达。
+- 对照官方资料说明功能默认值与限制，弱化缺少 PR 链接的归因，补充来源；为本篇建立独立配图引用，保留原始图片。
+
+### Testing
+
+- npm run build：通过，Hexo 正常生成目标文章页面和两张专属图片。
+- 生成 HTML 检查：标题、10 个二级章节、5 个官方资料链接均存在；两张图片使用主题的 data-src 懒加载属性，引用路径对应的文件存在，替代文本完整。
+- 专属图片与原图 SHA256 一致；正文没有 Unicode 替换字符和空代码块；原稿备份 SHA256 与施工前一致。
+- 官网、快速上手、隐私、本地脱敏和意图路由页面均已取得 HTTP 200；正文功能依据以这些官方说明及用户截图为准，未把文档核对表述为软件功能实测。
+- 仓库不存在 scripts/verify.ps1，使用现有 npm run build 验证；未执行发布。
+- 原稿与当前稿差异已审查；Git 跟踪文件与未跟踪文章分别执行空白差异检查通过。
+
+### Notes
+
+- source/_posts/magpie-替换ccswitch的选择.md：原地补完文章，更新标题、分类、标签和图片说明，保留原日期与文件名。
+- source/_posts/magpie-替换ccswitch的选择/routing.png：复制本篇路由截图，使用独立名称引用。
+- source/_posts/magpie-替换ccswitch的选择/usage.png：复制本篇用量截图，使用独立名称引用。
+- progress.md：仅在末尾追加本轮完成内容、验证证据和回滚方式。
+- 原稿与原日志备份点：C:\Users\UserX\AppData\Local\Temp\blog-magpie-978d08f3d99942b894c45a613297082c；原稿 SHA256：CC00A4CBA39A66978163C2FA7B65E92872EFF828205115B65E47C1FC1CC9B488。
+- 回滚方式：在仓库根目录执行以下 PowerShell 命令恢复原稿并移除本轮复制的图片；原始图片无需恢复，日志保留并另行追加回滚记录。临时目录备份应在系统清理前使用。
+
+```powershell
+Copy-Item -LiteralPath 'C:\Users\UserX\AppData\Local\Temp\blog-magpie-978d08f3d99942b894c45a613297082c\original.md' -Destination '.\source\_posts\magpie-替换ccswitch的选择.md' -Force
+Remove-Item -LiteralPath '.\source\_posts\magpie-替换ccswitch的选择\routing.png', '.\source\_posts\magpie-替换ccswitch的选择\usage.png'
+npm run build
+```
