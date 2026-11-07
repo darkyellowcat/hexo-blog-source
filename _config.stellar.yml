@@ -1,0 +1,128 @@
+leftbar:
+  brand:
+    name: DarkYellowCat
+    tagline: 技术笔记与开源实践
+    image:
+      src: /assets/brand/cat.svg
+      variant: icon
+  menu:
+    - id: home
+      title: 首页
+      icon: default:home
+      url: /
+    - id: post
+      title: 文章
+      icon: default:documents
+      url: /blog/
+    - id: topic
+      title: 专题
+      icon: default:pin
+      url: /topic/
+    - id: archives
+      title: 归档
+      icon: default:calendar
+      url: /archives/
+    - id: about
+      title: 关于
+      icon: default:profile
+      url: /about/
+  widgets: [explore]
+rightbar:
+  widgets: []
+profiles:
+  home:
+    active_menu: home
+    leftbar:
+      widgets: [explore]
+  blog_index:
+    path: /blog/
+    leftbar:
+      widgets: [explore]
+  post:
+    leftbar:
+      widgets: [explore]
+    rightbar:
+      widgets: [toc]
+  topic:
+    active_menu: topic
+    leftbar:
+      widgets: [related, explore]
+    rightbar:
+      widgets: [toc]
+  page:
+    leftbar:
+      widgets: [explore]
+    rightbar:
+      widgets: []
+  wiki_index:
+    path: null
+  notebooks:
+    path: null
+  error:
+    image: /assets/brand/cat.svg
+article:
+  style: tech
+  paragraph_indent: never
+  banner:
+    background: false
+  listing:
+    pinned_layout: flat
+    card_layout: classic
+    excerpt_length: 120
+    show_tags: false
+  show_reading_time: true
+  footer:
+    share: []
+appearance:
+  preset: minimal
+  color_scheme: light
+  colors:
+    primary: '#946000'
+    accent: '#bf8420'
+    link: '#855600'
+  gradients:
+    primary_action: 'linear-gradient(#946000, #946000)'
+    search_bar: 'linear-gradient(#e9b44c, #e9b44c)'
+  backgrounds:
+    leftbar:
+      type: none
+  typography:
+    font_family:
+      body: 'system-ui, "PingFang SC", "Microsoft YaHei", sans-serif'
+      code: 'Consolas, "SFMono-Regular", Menlo, monospace'
+    font_size:
+      root: 16px
+      code_block: 0.875rem
+  shape:
+    corner: round
+    radius:
+      card_large: 16px
+      card: 12px
+      card_small: 8px
+      image: 8px
+features:
+  partial_navigation:
+    enabled: false
+  reveal:
+    enabled: false
+  card_hover:
+    spotlight: false
+    tilt: false
+  lightbox:
+    enabled: true
+    selector: '.md-text p>img'
+  link_prefetch:
+    enabled: false
+search:
+  provider: local
+footer:
+  content: |
+    © DarkYellowCat · 记录学习，也记录过程。
+    使用 [Hexo](https://hexo.io/) 与 [Stellar](https://xaoxuu.com/wiki/stellar/) 构建 · [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+inject:
+  head_end: |
+    <link rel="stylesheet" href="/assets/site.css">
+    <meta name="theme-color" content="#f7f6f2">
+  body_end: |
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>if (window.LA) LA.init({ id: '3OnjqyPOaoYCHllV', ck: '3OnjqyPOaoYCHllV', autoTrack: true });</script>

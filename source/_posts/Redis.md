@@ -6,6 +6,9 @@ categories:
 tags:
   - Java学习
   - Redis
+collection:
+  profile: topic
+  id: java
 ---
 
 # 

@@ -5,6 +5,9 @@ categories:
   - 学习笔记
 tags:
   - Java
+collection:
+  profile: topic
+  id: java
 ---
 
 > 本文总结 Java 8 中最常用、最核心的三项特性：Lambda 表达式、Stream API 与 Optional。内容以“已学过、快速回顾与查阅”为目标，侧重概念理解与典型用法。

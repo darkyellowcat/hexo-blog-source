@@ -7,6 +7,10 @@ tags:
   - magpie
   - AI
   - 开发工具
+collection:
+  profile: topic
+  id: tools
+description: "从 cc-switch 转向 magpie，记录路由、用量查询、隐私脱敏与跨 Agent 使用模型的选择理由。"
 ---
 
 ## 为什么放弃 cc-switch

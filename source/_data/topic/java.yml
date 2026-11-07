@@ -1,0 +1,8 @@
+name: Java 后端
+headline: 从语言基础到项目实践
+description: Java、数据库与框架的学习笔记，以及实际开发中遇到的问题。
+listing:
+  excerpt_length: 120
+  sort:
+    field: date
+    direction: desc

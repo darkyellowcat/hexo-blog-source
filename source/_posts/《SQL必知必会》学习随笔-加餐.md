@@ -7,6 +7,9 @@ tags:
   - SQL
   - MySQL
   - Text to SQL
+collection:
+  profile: topic
+  id: java
 ---
 
 # 前言

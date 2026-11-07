@@ -7,6 +7,9 @@ tags:
   - Java学习
   - 安全
   - Spring
+collection:
+  profile: topic
+  id: java
 ---
 
 # 引入

@@ -5,6 +5,9 @@ categories:
   - 学习笔记
 tags:
   - MySQL
+collection:
+  profile: topic
+  id: java
 ---
 # 数据库操作
 

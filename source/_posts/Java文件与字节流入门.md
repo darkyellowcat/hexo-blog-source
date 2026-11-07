@@ -6,6 +6,10 @@ categories:
 tags:
   - Java
   - IO
+description: "从 Path、File 和 Files 入手，整理字节流读写、资源关闭与文件复制的基本用法。"
+collection:
+  profile: topic
+  id: java
 ---
 
 ## 文件位置：`Path` 与 `File`

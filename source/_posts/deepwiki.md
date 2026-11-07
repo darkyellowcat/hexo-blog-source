@@ -6,6 +6,9 @@ categories:
 tags:
   - GitHub
   - 开源工具
+collection:
+  profile: topic
+  id: tools
 ---
 # 引言
 在 GitHub 上，我们经常会遇到一个共同的问题：**项目结构太复杂，源码难以理解**。而 DeepWiki 正是为了解决这个痛点而诞生的一个开源导航与推荐工具。它通过算法与人工整理相结合，帮助开发者快速解析 GitHub 项目、文档和资源。

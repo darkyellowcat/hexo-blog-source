@@ -6,6 +6,10 @@ categories:
 tags:
   - Java
   - 面向对象
+description: "通过消息发送的例子，理解接口与抽象类如何配合，以及什么时候使用组合。"
+collection:
+  profile: topic
+  id: java
 ---
 
 **接口描述对象对外提供什么能力；抽象类可以为一组相关的子类保存共同状态和实现**。

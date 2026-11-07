@@ -5,6 +5,9 @@ categories:
   - 学习笔记
 tags:
   - 算法与数据结构
+collection:
+  profile: topic
+  id: algorithms
 ---
 需知：
 - 本文提到的模板均为Java实现;

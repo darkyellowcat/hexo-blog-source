@@ -1,0 +1,8 @@
+name: 开源实践
+headline: 从一个问题到一次贡献
+description: Kestra PR 的实现、测试与评审记录，看看代码进入开源项目的过程。
+listing:
+  excerpt_length: 120
+  sort:
+    field: date
+    direction: asc

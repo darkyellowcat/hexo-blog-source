@@ -5,6 +5,9 @@ categories:
   - 学习笔记
 tags:
   - Java
+collection:
+  profile: topic
+  id: java
 ---
 
 # 前言

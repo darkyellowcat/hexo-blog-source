@@ -9,6 +9,9 @@ tags:
   - 吴恩达
   - Skills
   - Claude Code
+collection:
+  profile: topic
+  id: tools
 ---
 
 本文是吴恩达 Agent Skills 课程的学习笔记，记录了 Skill 的概念、构成、创建方式以及与工具/MCP/子代理之间的关系。

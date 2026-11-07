@@ -6,6 +6,10 @@ categories:
 tags:
   - Java
   - 数组
+description: "从二维数组的引用关系出发，用示例区分共享行与逐行复制元素，以及两种写法对原数组的影响。"
+collection:
+  profile: topic
+  id: java
 ---
 
 ## 举例

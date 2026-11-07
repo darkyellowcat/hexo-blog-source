@@ -7,6 +7,9 @@ tags:
   - AI
   - Agent
   - 吴恩达
+collection:
+  profile: topic
+  id: tools
 ---
 
 ## 前言

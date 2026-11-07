@@ -7,6 +7,9 @@ tags:
   - SQL
   - MySQL
   - 数据库
+collection:
+  profile: topic
+  id: java
 ---
 
 # 前言

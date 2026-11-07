@@ -1,0 +1,8 @@
+name: 算法基础
+headline: 把思路写成可以运行的代码
+description: 数据结构、算法模板与 Java 题解，记录推导过程和容易忽略的细节。
+listing:
+  excerpt_length: 120
+  sort:
+    field: date
+    direction: desc

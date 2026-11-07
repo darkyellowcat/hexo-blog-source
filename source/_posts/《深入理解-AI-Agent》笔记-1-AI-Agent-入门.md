@@ -6,6 +6,9 @@ categories:
 tags:
   - LLM
   - Agent
+collection:
+  profile: topic
+  id: tools
 ---
 
 # 前言

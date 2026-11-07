@@ -5,6 +5,9 @@ categories:
   - 学习笔记
 tags:
   - Agent
+collection:
+  profile: topic
+  id: tools
 ---
 
 # 前言

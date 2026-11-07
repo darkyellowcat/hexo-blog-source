@@ -4,8 +4,9 @@
 
 # Site
 title: DarkYellowCat's Blog
-subtitle: 分享技术与思考
-description: 记录学习与成长
+subtitle: 技术笔记与开源实践
+description: 计科学生，记录 Java 后端学习、AI 工具与开源实践。
+favicon: /assets/brand/cat.svg
 keywords: "计科, Java, Maven, Spring, MyBatis, Linux, 后端"
 author: DarkYellowCat
 language: zh-CN
@@ -65,7 +66,7 @@ prismjs:
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-  path: ''
+  path: blog
   per_page: 10
   order_by: -date
 
@@ -101,7 +102,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: stellar
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -126,6 +127,3 @@ feed:
   limit: 20
   hub:
   content:
-
-toc:
-  maxdepth: 3

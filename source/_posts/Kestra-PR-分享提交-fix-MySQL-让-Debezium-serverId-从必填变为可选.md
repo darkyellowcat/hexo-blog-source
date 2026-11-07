@@ -10,6 +10,9 @@ tags:
   - Java
   - GitHub
 description: "记录我向 Kestra 的 plugin-debezium 提交 PR #221 的完整过程：从定位 serverId 的使用链路，到实现可选配置、补充测试和文档，再到合并后的评审反馈。"
+collection:
+  profile: topic
+  id: opensource
 ---
 
 这篇文章记录我第一次向 Kestra 的 [`plugin-debezium`](https://github.com/kestra-io/plugin-debezium) 仓库提交 MySQL 相关修复的经历。

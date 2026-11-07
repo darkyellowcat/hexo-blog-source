@@ -11,6 +11,9 @@ tags:
   - Testing
   - GitHub
 description: "记录 Kestra plugin-debezium PR #224 的实现与评审过程：复用 connector identity，稳定派生 MySQL serverId，并补齐测试、文档和完整验证。"
+collection:
+  profile: topic
+  id: opensource
 ---
 
 上一篇文章记录了我向 Kestra [`plugin-debezium`](https://github.com/kestra-io/plugin-debezium) 提交 PR #221 的过程：把 MySQL `serverId` 从必填配置改为可选配置，并在省略时生成一个 5400 到 6400 之间的值。

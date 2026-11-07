@@ -6,6 +6,9 @@ categories:
 tags:
   - 沙箱
   - 安全
+collection:
+  profile: topic
+  id: tools
 ---
 
 # 为什么要学沙箱

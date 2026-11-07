@@ -9,6 +9,9 @@ tags:
   - 数据库
   - 索引
   - 性能优化
+collection:
+  profile: topic
+  id: java
 ---
 
 # 前言

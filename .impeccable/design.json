@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-07T08:43:39.860885+00:00",
+  "title": "Design System: DarkYellowCat",
+  "extensions": {
+    "shadows": [
+      {
+        "name": "compact-topbar",
+        "value": "none",
+        "purpose": "≤1180px 顶栏取消阴影与背景模糊。"
+      }
+    ],
+    "motion": [
+      {
+        "name": "reduced-motion-home",
+        "value": "none",
+        "purpose": "减少动态效果偏好下，首页 animation 和 transition 均为 none !important。"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-topbar",
+        "value": "1180px"
+      },
+      {
+        "name": "featured-single-column",
+        "value": "1100px"
+      },
+      {
+        "name": "stacked-banner",
+        "value": "768px"
+      },
+      {
+        "name": "narrow-reading",
+        "value": "667px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "介绍链接",
+      "kind": "nav",
+      "refersTo": "intro-link",
+      "description": "首页文字导航。",
+      "html": "<div class=\"ds-home\"><div class=\"ds-intro-links\"><a href=\"/about/\">关于我<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M5 12h14m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a><a href=\"https://github.com/darkyellowcat\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M5 12h14m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a></div></div>",
+      "css": ".ds-home { font-family: system-ui, \"PingFang SC\", \"Microsoft YaHei\", sans-serif; font-size: 16px; line-height: 1.7; color: var(--dyc-ink, #2c302e); } .ds-home a { color: inherit; text-decoration: none; } .ds-home a:hover { color: var(--dyc-link, #855600); background: transparent; } .ds-home :focus-visible { outline: 2px solid var(--dyc-link, #855600); outline-offset: 4px; } .ds-home svg { width: 19px; height: 19px; flex-shrink: 0; } .ds-home h3 { border: 0; padding: 0; color: var(--dyc-ink, #2c302e); } .ds-intro-links { display: flex; gap: 28px; } .ds-intro-links a, .ds-section-head a, .ds-read { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; } .ds-intro-links a { border-bottom: 1px solid var(--dyc-line, #e3e2da); padding-bottom: 4px; } @media (prefers-reduced-motion: reduce) { .ds-home *, .ds-home *::before, .ds-home *::after { animation: none !important; transition: none !important; } }"
+    },
+    {
+      "name": "首篇精选",
+      "kind": "card",
+      "refersTo": "featured-card-first",
+      "description": "整卡链接；预览链接指向文章列表，悬停背景按源码透明覆盖。",
+      "html": "<div class=\"ds-home\"><a class=\"ds-feature\" href=\"/blog/\"><h3>从一次评审，改好一个默认值</h3><p>Kestra PR #224：MySQL serverId 的实现、测试与评审。</p><span class=\"ds-feature-footer\">开源贡献<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M5 12h14m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a></div>",
+      "css": ".ds-home { font-family: system-ui, \"PingFang SC\", \"Microsoft YaHei\", sans-serif; font-size: 16px; line-height: 1.7; color: var(--dyc-ink, #2c302e); } .ds-home a { color: inherit; text-decoration: none; } .ds-home a:hover { color: var(--dyc-link, #855600); background: transparent; } .ds-home :focus-visible { outline: 2px solid var(--dyc-link, #855600); outline-offset: 4px; } .ds-home svg { width: 19px; height: 19px; flex-shrink: 0; } .ds-home h3 { border: 0; padding: 0; color: var(--dyc-ink, #2c302e); } .ds-feature:hover { border-color: #b9a16f; } .ds-feature:first-child { background: #f7edcf; border-color: #ebd8a4; } .ds-feature h3 { font-size: 17px; margin: 0; line-height: 1.55; font-weight: 650; } .ds-feature p { font-size: 13px; color: var(--dyc-muted, #686b63); margin: 12px 0 24px; line-height: 1.75; } .ds-feature-footer { display: flex; align-items: center; justify-content: space-between; color: #70521b; font-size: 12px; margin-top: auto; } @media (max-width: 1100px) { .ds-feature { padding: 18px 20px; } .ds-feature p { margin: 8px 0 12px; } } @media (prefers-reduced-motion: reduce) { .ds-home *, .ds-home *::before, .ds-home *::after { animation: none !important; transition: none !important; } }"
+    },
+    {
+      "name": "专题行",
+      "kind": "nav",
+      "refersTo": "topic-row",
+      "description": "说明和数量为预览占位；实际页面从专题数据生成。",
+      "html": "<div class=\"ds-home\"><a class=\"ds-topic\" href=\"/topic/java/\"><span><strong>Java</strong><small>专题说明</small></span><span class=\"ds-topic-count\">文章数量<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M5 12h14m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a></div>",
+      "css": ".ds-home { font-family: system-ui, \"PingFang SC\", \"Microsoft YaHei\", sans-serif; font-size: 16px; line-height: 1.7; color: var(--dyc-ink, #2c302e); } .ds-home a { color: inherit; text-decoration: none; } .ds-home a:hover { color: var(--dyc-link, #855600); background: transparent; } .ds-home :focus-visible { outline: 2px solid var(--dyc-link, #855600); outline-offset: 4px; } .ds-home svg { width: 19px; height: 19px; flex-shrink: 0; } .ds-home h3 { border: 0; padding: 0; color: var(--dyc-ink, #2c302e); } .ds-topic strong { display: block; font-size: 16px; font-weight: 600; } .ds-topic small { display: block; color: var(--dyc-muted, #686b63); font-size: 12px; line-height: 1.7; margin-top: 6px; } .ds-topic-count { flex-shrink: 0; display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--dyc-muted, #686b63); font-variant-numeric: tabular-nums; } @media (prefers-reduced-motion: reduce) { .ds-home *, .ds-home *::before, .ds-home *::after { animation: none !important; transition: none !important; } }"
+    },
+    {
+      "name": "阅读全文",
+      "kind": "button",
+      "refersTo": "read-link",
+      "description": "保留 anchor 语义的文字操作；预览指向文章列表。",
+      "html": "<div class=\"ds-home\"><div class=\"ds-post\"><a class=\"ds-read\" href=\"/blog/\">阅读全文<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M5 12h14m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a></div></div>",
+      "css": ".ds-home { font-family: system-ui, \"PingFang SC\", \"Microsoft YaHei\", sans-serif; font-size: 16px; line-height: 1.7; color: var(--dyc-ink, #2c302e); } .ds-home a { color: inherit; text-decoration: none; } .ds-home a:hover { color: var(--dyc-link, #855600); background: transparent; } .ds-home :focus-visible { outline: 2px solid var(--dyc-link, #855600); outline-offset: 4px; } .ds-home svg { width: 19px; height: 19px; flex-shrink: 0; } .ds-home h3 { border: 0; padding: 0; color: var(--dyc-ink, #2c302e); } .ds-intro-links a, .ds-section-head a, .ds-read { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; } .ds-post .ds-read { font-size: 12px; font-weight: 500; color: var(--dyc-link, #855600); } @media (prefers-reduced-motion: reduce) { .ds-home *, .ds-home *::before, .ds-home *::after { animation: none !important; transition: none !important; } }"
+    },
+    {
+      "name": "原创猫标识",
+      "kind": "custom",
+      "refersTo": "cat-mark",
+      "description": "原始 SVG 路径与首页响应尺寸。",
+      "html": "<div class=\"ds-home\"><svg class=\"ds-cat\" role=\"img\" aria-label=\"DarkYellowCat 的琥珀色猫标识\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 80 80\" fill=\"none\">\n  <title>DarkYellowCat</title>\n  <rect width=\"80\" height=\"80\" rx=\"22\" fill=\"#F3C568\"/>\n  <path d=\"M18 39V18l17 12a35 35 0 0 1 10 0l17-12v21c3 5 4 9 3 13-2 12-13 17-25 17S17 64 15 52c-1-4 0-8 3-13Z\" fill=\"#2C302E\"/>\n  <path d=\"m23 25 8 7-8 3zm34 0-8 7 8 3z\" fill=\"#F3C568\"/>\n  <path d=\"M28 45v5m24-5v5\" stroke=\"#F3C568\" stroke-width=\"4\" stroke-linecap=\"round\"/>\n  <path d=\"m36 53 4 4 4-4\" fill=\"#F3C568\"/>\n  <path d=\"M40 57v4m0 0-5 2m5-2 5 2\" stroke=\"#F3C568\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n</svg></div>",
+      "css": ".ds-home { font-family: system-ui, \"PingFang SC\", \"Microsoft YaHei\", sans-serif; font-size: 16px; line-height: 1.7; color: var(--dyc-ink, #2c302e); } .ds-home a { color: inherit; text-decoration: none; } .ds-home a:hover { color: var(--dyc-link, #855600); background: transparent; } .ds-home :focus-visible { outline: 2px solid var(--dyc-link, #855600); outline-offset: 4px; } .ds-home svg { width: 19px; height: 19px; flex-shrink: 0; } .ds-home h3 { border: 0; padding: 0; color: var(--dyc-ink, #2c302e); } .ds-home .ds-cat { width: 112px; height: 112px; border-radius: 30px; transform: rotate(-5deg); } @media (max-width: 1100px) { .ds-home .ds-cat { width: 88px; height: 88px; border-radius: 24px; } } @media (max-width: 667px) { .ds-home .ds-cat { width: 64px; height: 64px; border-radius: 18px; } } @media (prefers-reduced-motion: reduce) { .ds-home *, .ds-home *::before, .ds-home *::after { animation: none !important; transition: none !important; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "文章与学习为先",
+    "overview": "已批准方向是以文章和学习路径为核心的个人技术博客：暖浅中性色、炭灰文字、琥珀点缀，以原创矢量猫建立身份。英文姓名使用自托管 Manrope 700，中文正文使用系统字体；阅读结构和内容可达性优先。\n\n首页依次呈现个人介绍、3 篇精选、4 个专题、6 篇最近文章；完整文章列表位于 `/blog/`，每页 10 篇。此处保留已批准方向，不另建根目录产品文档。",
+    "keyCharacteristics": [
+      "暖浅底色、清晰文字层级与细分隔线。",
+      "原创琥珀猫标识与克制的英文姓名展示。",
+      "专题入口与文章列表服务连续阅读。"
+    ],
+    "rules": [],
+    "dos": [
+      "**Do** 保留文章、专题与连续阅读的优先级。",
+      "**Do** 使用原创猫、自托管 Manrope 700 和中文系统字体。",
+      "**Do** 保留紧凑顶栏的 56px 页面预留及可见键盘焦点。",
+      "**Do** 以当前源码核实响应式行为，再使用刷新后的截图检查视觉结果。"
+    ],
+    "donts": [
+      "**Don't** 将旧浮动 dock 或旧截图作为当前布局依据。",
+      "**Don't** 将琥珀标识色直接替代深色正文与链接色。",
+      "**Don't** 添加源码未定义的色阶、阴影或动画 token。"
+    ]
+  }
+}

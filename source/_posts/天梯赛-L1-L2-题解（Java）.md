@@ -7,6 +7,9 @@ tags:
   - Java
 categories:
   - 算法题解
+collection:
+  profile: topic
+  id: algorithms
 ---
 | 目录 |
 | ---- |

@@ -6,6 +6,9 @@ categories:
 tags:
   - Java
   - 集合
+collection:
+  profile: topic
+  id: java
 ---
 
 两个对象字段看起来一样，放进 `HashSet` 后却查不到；或者重写了 `equals()`，编辑器又提示要重写 `hashCode()`。这些现象都指向同一个问题：我们给对象定义了新的“相等”含义，却没有同步定义它在哈希集合中的散列码。

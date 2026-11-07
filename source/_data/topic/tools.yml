@@ -1,0 +1,8 @@
+name: AI 与开发工具
+headline: 工具怎样真正帮上忙
+description: Agent 学习、模型工具与开发环境配置，分享尝试、取舍和踩坑。
+listing:
+  excerpt_length: 120
+  sort:
+    field: date
+    direction: desc

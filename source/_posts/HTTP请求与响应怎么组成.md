@@ -6,6 +6,9 @@ categories:
 tags:
   - HTTP
   - 计算机网络
+collection:
+  profile: topic
+  id: java
 ---
 
 学习后端接口时，我曾把请求行叫作“状态行”，还以为只有 POST 请求才能带请求体。把一次 HTTP/1.1 交互拆开看，这两个概念就容易分清了。

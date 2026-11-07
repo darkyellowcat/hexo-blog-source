@@ -7,6 +7,10 @@ tags:
   - Java后端
   - SpringBoot
   - Redis
+collection:
+  profile: topic
+  id: java
+description: "从校园社交需求出发，记录使用 Spring Boot、MySQL 与 Redis 构建兴趣匹配系统的过程。"
 ---
 
 # 缘由

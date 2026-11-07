@@ -7,6 +7,9 @@ tags:
   - Spring Boot
   - MyBatis-Plus
   - 依赖冲突
+collection:
+  profile: topic
+  id: java
 ---
 
 ## 背景

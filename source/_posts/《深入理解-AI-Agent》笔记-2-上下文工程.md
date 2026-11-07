@@ -2,6 +2,9 @@
 title: 《深入理解 AI Agent》笔记 - 2 上下文工程
 date: 2026-09-07 15:50:59
 tags:
+collection:
+  profile: topic
+  id: tools
 ---
 
 # 前言

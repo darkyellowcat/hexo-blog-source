@@ -245,3 +245,122 @@ Copy-Item -LiteralPath 'C:\Users\UserX\AppData\Local\Temp\blog-magpie-978d08f3d9
 Remove-Item -LiteralPath '.\source\_posts\magpie-替换ccswitch的选择\routing.png', '.\source\_posts\magpie-替换ccswitch的选择\usage.png'
 npm run build
 ```
+
+
+## 2026-11-07 - Task: 迁移 Stellar 并重做技术博客界面
+
+### What was done
+
+- 按已确认方向完成 Stellar 2.0.0 迁移，以暖浅灰、深灰和琥珀色建立统一视觉，新增原创猫标识。
+- 首页改为简短介绍、三篇精选、四个专题与六篇最新文章；全部文章移到 /blog/，每页十篇，旧分页提供跳转。
+- 为 41 篇文章建立四类专题目录与原生系列导航，补充必要摘要，保留全部 46 篇文章正文和原有日期 URL。
+- 统一阅读排版，修复旧目录插件冲突、手机长标题溢出、悬浮导航遮挡与文章元信息挤压；保留搜索、图片放大、统计和许可说明。
+- 完成维护和设计文档；未提交、推送或发布。
+
+### Testing
+
+- Node 22.19.0 / Hexo 8.1.2：npm run clean、npm run build 通过，干净构建生成 285 个文件；npx hexo stellar doctor 为 PASS。仓库无 scripts/verify.ps1，使用现有构建入口验证。
+- npm ci --dry-run --ignore-scripts 通过，验证 package.json 与 npm 锁文件相容；未实际执行 Linux CI 或生产发布。
+- 46 篇正文与迁移前 Git 基准逐字节相同；解析 Front Matter 后确认原有字段一致，仅增加 collection 和六篇文章的 description。75 条原文章/图片路径全部保留。
+- Python Playwright + Chromium：主页三精选、六最新、四专题数量（20/8/11/2）、全部文章十篇分页、旧分页跳转、分类/标签/归档/关于页面均通过。
+- 实测搜索 magpie、键盘 Enter 打开、Escape 关闭与焦点返回；手机导航到文章列表、文章目录锚点、图片灯箱均通过。检查期间无 JavaScript 异常、无本地资源 4xx/5xx。
+- 首页及 magpie、算法代码、MySQL 表格、论文页面在 1440 / 768 / 390px 下无文档横向溢出；实际图片加载后截图。手机顶部预留 56px，专题入口中心未被遮挡，三个面包屑链接均保持单行。
+- 独立视觉复核提出手机悬浮按钮遮挡、面包屑挤压；修复后定向复核返回 disposition: ship，P1/P2 均 resolved。该结论限于两项修复，不能替代全站无障碍或跨浏览器审计。
+- git -c core.whitespace=cr-at-eol diff --check 通过，保留已有文件的 CRLF；Git diff 已审查，未修改文章正文。Impeccable context/detect 启动无响应，已中断，未把它们记为检查通过。
+- 本地截图位于 .impeccable/review/；功能、元数据与手机复验脚本位于 C:/Users/UserX/AppData/Local/Temp/blog-stellar-check.py、blog-stellar-metadata-check.js、blog-stellar-final-mobile.py。
+
+### Notes
+
+- `.github/workflows/deploy.yml`：对齐 Node 22，并使用 npm ci 安装锁定依赖。
+- `.gitignore`：忽略可重建的图片元数据和本地复核截图。
+- `.impeccable/design.json`：保存与实际样式一致的机器可读设计令牌。
+- `_config.stellar.yml`：配置导航、阅读布局、浅色琥珀主题、搜索、统计和版权。
+- `_config.yml`：启用 Stellar、文章列表迁至 /blog/，更新站点简介和图标，移除旧目录插件配置。
+- `docs/DESIGN.md`：记录已批准方向、实际令牌与响应式设计约束。
+- `docs/stellar-maintenance.md`：记录内容编辑、构建预览、兼容处理及回滚方法。
+- `package-lock.json`：锁定新增主题及其依赖，移除旧目录插件的依赖树。
+- `package.json`：固定 Stellar 2.0.0，移除冲突的 hexo-toc，并同步 Hexo 实际版本。
+- `progress.md`：仅追加本轮结果、验证证据、文件清单和回滚点。
+- `scripts/home.js`：生成个人首页、专题目录与旧分页跳转，保留主题外壳及文章 URL。
+- `source/_data/icons.yml`：补充与导航一致的首页 SVG 图标。
+- `source/_data/topic/algorithms.yml`：定义专题名称、介绍、倒序排列及 120 字自动摘要。
+- `source/_data/topic/java.yml`：定义专题名称、介绍、倒序排列及 120 字自动摘要。
+- `source/_data/topic/opensource.yml`：定义专题名称、介绍、倒序排列及 120 字自动摘要。
+- `source/_data/topic/tools.yml`：定义专题名称、介绍、倒序排列及 120 字自动摘要。
+- `source/_data/widgets.yml`：提供分类、标签、GitHub 补充入口。
+- `source/_posts/HTTP请求与响应怎么组成.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/Java-equals与hashCode为什么要一起重写.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/Java8特性.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/Java二维数组复制-共享行与复制元素.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/Java后端实习经历分享.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/Java基础算法模板.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/Java接口与抽象类怎么选.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/Java文件与字节流入门.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/Java框架.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/Kestra-PR-分享-224-如何修正-MySQL-serverId-的缺省策略.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/Kestra-PR-分享提交-fix-MySQL-让-Debezium-serverId-从必填变为可选.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/MYSQL字段类型优化.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/Maven学习.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/MyBatis-Plus-SpringBoot3-Fix.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/MySQL密码错误解决方法.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/Redis.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/SpringSecurity.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/claude-codex配置分享.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/deepwiki.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/magpie-替换ccswitch的选择.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/mysql学习.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/omp连接gpt-plus-pro报错-403-unsupported-country-region-territory.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/weconnected项目.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/《SQL必知必会》学习随笔-加餐.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/《SQL必知必会》学习随笔-基础篇.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/《SQL必知必会》学习随笔-进阶篇.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/《深入理解-AI-Agent》笔记-1-AI-Agent-入门.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/《深入理解-AI-Agent》笔记-2-上下文工程.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/二叉树与递归.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/二叉树的最大深度.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/二叉树的遍历.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/位运算常用技巧.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/单调队列.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/吴恩达Agent智能体学习笔记.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/吴恩达agent-skills.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/天梯赛-L1-L2-题解（Java）.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/如何通过工具提高代码质量.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/微信小程序开发踩坑.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/沙箱Sandbox.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/生成头像.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/_posts/链表.md`：仅补充专题归属；有需要的文章增加摘要，正文、日期、分类、标签保持不变。
+- `source/assets/brand/cat.svg`：新增原创琥珀色猫头像与 favicon。
+- `source/assets/fonts/OFL.txt`：附带 Manrope 字体授权。
+- `source/assets/fonts/manrope.ttf`：自托管英文站名使用的 Manrope 700 字体。
+- `source/assets/site.css`：实现首页、专题、阅读样式与手机顶部导航，修复长标题和元信息布局。
+- `source/categories/index.md`：使用 Stellar 支持的分类页面布局字段。
+- `source/tags/index.md`：使用 Stellar 支持的标签页面布局字段。
+- `yarn.lock`：同步主题迁移与目录插件移除后的依赖解析。
+- .impeccable/review/：本地生成的桌面、平板、手机及交互截图，不纳入版本控制。
+- npm 安装报告 20 个依赖审计问题（7 low / 2 moderate / 11 high），本轮未执行超出主题迁移范围的 audit fix；第三方统计接收端未实测，灯箱及懒加载仍依赖主题默认外部资源。
+- 回滚点：b214bac928a72e8fa2aa50f439743285ea99744c。可执行 `git worktree add --detach D:\blog-before-stellar b214bac928a72e8fa2aa50f439743285ea99744c` 在新目录取回原版本，再运行 `npm ci`、`npm run clean`、`npm run build`；本轮未改变线上站点。正式撤销本轮时仅恢复上述文件并追加回滚记录，不覆盖后来新增内容。
+
+
+## 2026-11-07 - Task: 核对 51.la 统计并准备提交
+
+### What was done
+
+- 对照迁移前 NexT body-end 注入与当前 Stellar body_end 注入，确认统计代码没有丢失；未修改统计实现。
+- 核对本轮 65 个变更文件均属于已记录的 Stellar 改版范围，暂存以供提交；未创建提交、推送或发布。
+
+### Testing
+
+- 原配置和当前配置的 SDK 地址、id、ck（3OnjqyPOaoYCHllV）及 autoTrack: true 一致。
+- 扫描全部生成 HTML：158 个正式页面各有一份 SDK 和初始化代码；4 个旧分页跳转页不额外统计，避免跳转重复计数。
+- https://sdk.51.la/js-sdk-pro.min.js 请求返回 HTTP 200。
+- Playwright 在首页、文章列表、专题、关于和文章详情使用 SDK 替身验证：先加载 SDK，再初始化，正确参数每页调用一次；阻断 SDK 时没有 LA 未定义异常。此验证未向统计服务发送真实访问事件，也未核验 51.la 后台入库。
+- 检查脚本：C:/Users/UserX/AppData/Local/Temp/blog-51la-check.py。
+- 暂存后以 git -c core.whitespace=cr-at-eol diff --cached --check 检查差异；生成页面、node_modules 和复核截图不纳入提交。
+
+### Notes
+
+- progress.md：仅追加本次统计核对结果和提交准备记录；历史内容保持原字节。
+- 本轮未改动其他源码；暂存内容为上一任务列出的 65 个文件。
+- 取消暂存可执行 git restore --staged -- .，工作区文件保留；改版回滚点仍为 b214bac928a72e8fa2aa50f439743285ea99744c。
+
+- 暂存差异检查发现官方字体许可 OFL.txt 第 21 行自带一个行尾空格；为保持原始许可文本不改写，保留该文件。排除此第三方许可文件后，`git -c core.whitespace=cr-at-eol diff --cached --check -- . ":!source/assets/fonts/OFL.txt"` 通过，其余暂存内容无空白错误。
