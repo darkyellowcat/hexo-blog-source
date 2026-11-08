@@ -364,3 +364,35 @@ npm run build
 - 取消暂存可执行 git restore --staged -- .，工作区文件保留；改版回滚点仍为 b214bac928a72e8fa2aa50f439743285ea99744c。
 
 - 暂存差异检查发现官方字体许可 OFL.txt 第 21 行自带一个行尾空格；为保持原始许可文本不改写，保留该文件。排除此第三方许可文件后，`git -c core.whitespace=cr-at-eol diff --cached --check -- . ":!source/assets/fonts/OFL.txt"` 通过，其余暂存内容无空白错误。
+
+
+## 2026-11-08 - Task: 完善 AGENTS.md 分享文章并修复模板排版
+
+### What was done
+
+- 保留群友分享后结合个人习惯调整的开头，补齐 AGENTS.md 的用途、任务范围、简单实现、验证记录与回复方式说明。
+- 说明脚本、工作分工、高风险约定和 CodeGraph / Memorix 附加段的项目背景，结合 OpenAI 官方文档说明 Codex 加载范围，避免泛化到所有工具。
+- 保留完整原模板，将外层代码围栏改为四反引号，修复内部三反引号导致的代码块截断；补充摘要、分类、标签和 AI 与开发工具专题归属。
+- 保留原标题、文件名和日期；未修改仓库执行规范、主题或其他文章，未提交或发布。
+
+### Testing
+
+- npm run build 通过，生成 2026/11/07/AGENTS-md-分享/index.html；保留原始日期和 URL。
+- 完整模板与原稿提取内容 SHA256 相同；原稿备份 SHA256 验证通过。生成 HTML 中所有模板代码行与原模板文本一致，内部代码围栏、表格及 HTML 注释均作为代码展示。
+- 生成页面恰有一个完整模板代码块、五个预期二级标题；无模板标题泄漏为文章 h1。首页、文章列表、工具推荐分类、AGENTS.md 标签和 tools 专题均存在文章入口。
+- Python Playwright / Chromium 在 1440×1000 与 390×844 检查实际页面并截图，页面无横向溢出、无 JavaScript 异常；手机代码表格宽 356px、内容宽 7293px，设置 scrollLeft=100 后实际移动成功。
+- 已查看桌面与手机的导语、完整模板截图，正文与代码区域正常；截图位于 .impeccable/review/agents-*-intro.png 和 agents-*-template.png，属于忽略的本地复核产物。
+- 构建入口仍使用仓库现有 npm run build；仓库未提供 scripts/verify.ps1。验证脚本：C:/Users/UserX/AppData/Local/Temp/blog-agents-verify.py。
+
+### Notes
+
+- source/_posts/AGENTS-md-分享.md：补齐介绍、适用边界、分类摘要和专题信息，修复外层代码围栏，完整模板内容保持原字节。
+- progress.md：仅追加本轮完成内容、验证证据及回滚信息，历史记录保持原字节。
+- 原稿备份：`C:\Users\UserX\AppData\Local\Temp\blog-agents-original-51404ede76994bb6a50108b7f6f8d1b3.md`；SHA256：`9834afb0ed0335d735434c13b20814a5d948a417bae54049b06078d192e0c438`。
+- 完整模板 SHA256：`1b51f9036433f3cd7a01ca55ff57986be86201716c22459deac0ec3bec39c2c7`。
+- 回滚方式：在仓库根目录执行下列 PowerShell 命令恢复未跟踪的原稿；保留进度历史并另行追加回滚记录，备份需在临时目录清理前使用。
+
+```powershell
+Copy-Item -LiteralPath 'C:\Users\UserX\AppData\Local\Temp\blog-agents-original-51404ede76994bb6a50108b7f6f8d1b3.md' -Destination 'D:\blog\source\_posts\AGENTS-md-分享.md' -Force
+npm run build
+```
