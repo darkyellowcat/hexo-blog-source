@@ -396,3 +396,96 @@ npm run build
 Copy-Item -LiteralPath 'C:\Users\UserX\AppData\Local\Temp\blog-agents-original-51404ede76994bb6a50108b7f6f8d1b3.md' -Destination 'D:\blog\source\_posts\AGENTS-md-分享.md' -Force
 npm run build
 ```
+
+
+## 2026-11-08 - Task: 撰写博客改版经历与踩坑文章
+
+### What was done
+
+- 新增《博客换个样子：从 NexT 到 Stellar》，以个人经历介绍改版原因、主题选择、首页与专题调整，以及缓存残留、目录插件冲突和手机布局问题。
+- 根据实际配置和既有验证记录核对内容，明确本站定制部分、迁移当时的 46 篇正文与 75 条路径，以及 51.la 页面初始化检查和后台入库的区别；引用 Stellar、Hexo 官方文档。
+- 截取当前桌面首页和手机文章页面两张实拍图，使用本文独立资源目录；补充摘要、折腾记录分类、标签和 tools 专题归属。
+- 未修改既有文章、主题或配置，未提交、推送或发布。
+
+### Testing
+
+- npm run build 通过，文章生成于 2026/11/08/博客换个样子-从NexT到Stellar/index.html，两张截图资源均成功输出。
+- 生成 HTML 有 6 个二级标题、4 个三级标题、2 个代码块、2 张带替代文本的图片；资源输出与源图 SHA256 一致。首页、文章列表、tools 专题及折腾记录分类均存在文章入口，51.la SDK 在文章页仅注入一次。
+- Python Playwright / Chromium 在 1440×1000 与 390×844 验证新文章：两图完成真实加载、没有整页横向溢出、没有 JavaScript 异常或本地资源 4xx/5xx；10 个目录链接存在且跳转成功。检查时阻断统计 SDK，未向 51.la 发送本轮测试访问。
+- 查看桌面完整文章、手机首屏和图片区域截图，排版正常；本次配图为 1440×1100 首页与 390×920 手机文章实拍，不使用失败的旧渲染作为改版前对比。
+- git -c core.whitespace=cr-at-eol diff --check 及新文章空白检查通过；progress.md 原历史字节保持不变。
+- 验证脚本：C:/Users/UserX/AppData/Local/Temp/blog-redesign-verify.py；复核截图：.impeccable/review/redesign-post-*.png。仓库无 scripts/verify.ps1，使用现有 npm run build 作为构建入口。
+
+### Notes
+
+- source/_posts/博客换个样子-从NexT到Stellar.md：新增改版分享文章、配置片段、官方资料链接及内容元数据。
+- source/_posts/博客换个样子-从NexT到Stellar/home-desktop.png：新增实际桌面首页截图，展示简介、精选与四个专题。
+- source/_posts/博客换个样子-从NexT到Stellar/article-mobile.png：新增实际手机文章截图，展示顶部导航和阅读元信息排布。
+- progress.md：仅在末尾追加本轮内容、验证证据和回滚方法。
+- 回滚方式：在仓库根目录执行以下命令移除本轮新增的三份交付文件；日志保留并另行追加回滚记录。未改动其他内容，无需恢复旧文章或配置。
+
+```powershell
+Remove-Item -LiteralPath '.\source\_posts\博客换个样子-从NexT到Stellar.md', '.\source\_posts\博客换个样子-从NexT到Stellar\home-desktop.png', '.\source\_posts\博客换个样子-从NexT到Stellar\article-mobile.png'
+npm run clean
+npm run build
+```
+
+
+## 2026-11-16 - Task: 整理 ArceOS 实验排查记录博客
+
+### What was done
+
+- 按照个人技术博客风格重构《ArceOS 实验记录：从 NotFound 到成功进入 mmap 系统调用》。
+- 完善 Front-matter 元数据，设置“踩坑”分类，补充精准摘要和 ArceOS、操作系统、RISC-V、Rust、踩坑等标签。
+- 梳理行文结构：从现象呈现、镜像单步排查、测试脚本静默失败分析、工具链 PATH 补全，到 IDEA 索引虚假报错剖析，最后展示预期 panic 与全链路排查流程图。
+- 正文使用短句短段、结论先行、代码精简展示和因果链图解，保持实事求是、注重闭环验证的技术风格。
+
+### Testing
+
+- `npm run build`：通过；Hexo 成功生成 `2026/11/16/ArceOS实验记录-从NotFound到成功进入mmap系统调用/index.html`。
+- UTF-8 内容检查：通过；页面标题、元数据、段落及代码块正常渲染，无乱码或未渲染围栏。
+- 标签与分类索引检查：通过；`tags/ArceOS/`、`tags/RISC-V/`、`tags/Rust/`、`tags/操作系统/`、`tags/踩坑/` 与 `categories/踩坑/` 页面均已成功生成。
+
+### Notes
+
+- `source/_posts/ArceOS实验记录-从NotFound到成功进入mmap系统调用.md`：新增博客文章源文件。
+- `progress.md`：仅在末尾追加本轮施工、测试与回滚记录，保持历史记录不变。
+- 回滚方式：在仓库根目录执行下列 PowerShell 命令删除新增文件并重新构建：
+
+```powershell
+Remove-Item -LiteralPath '.\source\_posts\ArceOS实验记录-从NotFound到成功进入mmap系统调用.md'
+npm run clean
+npm run build
+```
+
+
+## 2026-11-20 - Task: 完善《图数据库初步》博客
+
+### What was done
+
+- 将《图数据库初步》草稿重构完善为正式技术博客，系统整理图数据库核心特征、落地场景与架构思考。
+- 补充 Front-matter 元数据：归入“学习笔记”分类，打上“数据库”、“图数据库”、“HugeGraph”、“架构设计”标签，归属“java”专题。
+- 章节细化：
+  - 核心特征：属性图模型（点、边、属性、标签）、关系作为一等公民、免索引邻接（Index-Free Adjacency）原理及与 RDBMS 的寻址复杂度对比。
+  - 落地场景：化解多表 JOIN 爆炸灾难，详述金融风控反洗钱、知识图谱与 GraphRAG、社交推荐与 IT 拓扑血缘等场景。
+  - 工程实现：以 Apache HugeGraph 为例，梳理计算与存储分离架构、插件式存储适配（RocksDB/HBase/MySQL）与 Gremlin 遍历对比。
+  - 深度反思：深化原稿引用的 B 站视频观点，探讨关系型数据库难以被颠覆的原因、图算法（内存密集迭代）与图存储（持久化 OLTP）的水土不服，以及命令式遍历导致接口与算法难以解耦的问题。
+  - 总结建议：提供多维度选型对比表，给出“主数据留存 RDBMS，深度关系按需抽取图库”的专库专用原则。
+
+### Testing
+
+- `npm run build`：通过；Hexo 8.0.0 / Stellar 2.0.0 成功生成 73 个页面，目标文章页面 `public/2026/11/19/图数据库初步/index.html` 正常生成。
+- 页面与索引检查：通过；标题、YAML 元数据、中文字符、表格、ASCII 架构图、Gremlin 与 SQL 代码块正常渲染，未发现未闭合标记或乱码。
+- 专题与标签入口：通过；`topic/java/`、`categories/学习笔记/`、`tags/图数据库/`、`tags/HugeGraph/`、`tags/架构设计/` 页面均成功更新并包含该文章入口。
+
+### Notes
+
+- `source/_posts/图数据库初步.md`：更新博客文章。
+- `progress.md`：仅在末尾追加本轮任务与验证日志，历史内容保持不变。
+- 回滚方式：如需恢复，执行以下命令即可撤销对该文章的修改并重新构建：
+
+```powershell
+git restore -- 'source/_posts/图数据库初步.md'
+npm run clean
+npm run build
+```
